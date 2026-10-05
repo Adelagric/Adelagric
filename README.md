@@ -2,22 +2,30 @@
 
 I write Rust and hunt silent failures: the kind where a program returns a plausible answer and nothing tells you it's wrong.
 
+**29 merged pull requests** upstream, in rust-bio, rostam, conda, OpenFisca, varlociraptor and dna-seq-varlociraptor. One of my projects ships inside someone else's product.
+
 ## Building
 
-- [vivacity](https://github.com/Adelagric/vivacity) — `composer install` and `composer update`, reimplemented in Rust. Same `composer.json` in, same `vendor/` and lock file out as Composer, byte for byte. No PHP needed.
-- [ocs-rs](https://github.com/Adelagric/ocs-rs) — exact, matrix-free solver for optimum contribution selection in breeding programs. It never forms the dense relationship matrix, so it runs at population sizes where the reference tool can't.
-- [vector-router](https://github.com/Adelagric/vector-router) — gRPC middleware that rejects NaN, Inf and out-of-range vectors before they reach a vector database.
+- **[vivacity](https://github.com/Adelagric/vivacity)** — `composer install` and `composer update`, reimplemented in Rust. Same `composer.json` in, same `vendor/` and lock file out as Composer, byte for byte, with no PHP.
+  - **Adopted by [ePHPm](https://github.com/ephpm/ephpm)**, which embeds it as `ephpm composer` ([ephpm#523](https://github.com/ephpm/ephpm/pull/523)), keeps a fork under its org, and runs a daily CI job that bumps the pin whenever a new vivacity lands on crates.io.
+  - Checked against the real thing, not assumed: on a corpus of 106 real PHP projects, 75 install natively and byte-identical down to file modes; the rest are handed to Composer before any write. **No diff on any of them.**
+  - 22 releases, published on crates.io as four crates (`vivacity`, `-core`, `-resolver`, `-autoload`), installable via script, `cargo binstall` or a GitHub Action.
+- **[ocs-rs](https://github.com/Adelagric/ocs-rs)** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20746987.svg)](https://doi.org/10.5281/zenodo.20746987) — exact, matrix-free solver for optimum contribution selection in breeding programs. Same optimum as optiSel, the field's exact tool, and **12–132× faster** given the relationship matrix; without it, it runs at population sizes where that matrix can't be built. Validated on wheat, pig and mouse genomic panels, with a manuscript and a one-command reproduction. On PyPI.
+- **[vector-router](https://github.com/Adelagric/vector-router)** — gRPC middleware that rejects NaN, Inf and wrong-dimension vectors before they reach Qdrant or pgvector, with per-producer Prometheus metrics. Checked under miri.
+- **[moment-scale-law](https://github.com/Adelagric/moment-scale-law)** — paper and code: *How fine a change can moments see? A scale law for detecting distribution shift, with a kernel calibration rule.* Every number in the paper maps to the script that produces it.
+- **[opengatellm-rs](https://github.com/Adelagric/opengatellm-rs)** — Rust client for OpenGateLLM, the French government's (DINUM / Etalab) open-source LLM gateway. On crates.io as `opengatellm`.
 
 ## Upstream
 
 Most of my time goes into other people's code. The bugs I keep finding fall into four buckets:
 
-- **Data dropped without an error.** Vector's file source on stale checkpoints, mem0 on partial embedding failures, one bad span discarding a whole ingestion batch in future-agi, conda leaving half-created environments on disk, OpenFisca and PolicyEngine losing memberless group entities on `restore_simulation`.
-- **Corrupt state accepted as valid.** NaN vectors in Qdrant and Weaviate, checkpoints published without a directory fsync and no fail-closed latch after a failed fsync in rostam.
-- **Numbers that are quietly wrong.** rust-bio's pair HMMs: gap extensions that emit no base, gaps opened with the other sequence's probability, stale cells left outside the band, column ends summed twice.
-- **Tools that drift from their reference.** OpenFisca simulation clones sharing state with the original, `freebayes-parallel` disagreeing with a single run at region boundaries, Composer failing instead of explaining a security block.
+- **Numbers that are quietly wrong.** Five fixes to rust-bio's pair HMMs: gap extensions that emitted no base, stale cells left outside the band, gaps opened with the other sequence's probability, column ends summed twice, hop states that could not return to every match state. All merged and released in rust-bio 4.2.
+- **Data dropped without an error.** conda leaving half-created environments on disk (merged), OpenFisca losing memberless group entities on `restore_simulation` (merged), Vector's file source on stale checkpoints, mem0 on partial embedding failures, one bad span discarding a whole ingestion batch in future-agi.
+- **Corrupt state accepted as valid.** In rostam: checkpoints published without a directory fsync, no fail-closed latch after a failed fsync, trailing bytes accepted by the log decoder; all fixed, plus fuzzing of the network and WAL-recovery decoders (8 PRs merged). NaN vectors accepted by Weaviate.
+- **Tools that drift from their spec or reference.** varlociraptor scenarios with overlapping events (now checked at compile time, merged), dna-seq-varlociraptor declaring config keys it didn't read (merged), `freebayes-parallel` disagreeing with a single run at region boundaries, OpenFisca simulation clones sharing state with the original. A wrong `channelId` docstring in the x402 spec, reported with byte-exact vectors and fixed upstream.
 
-Merged in rust-bio, rostam, conda, OpenFisca, varlociraptor, dna-seq-varlociraptor. Open in ClickHouse, Vector, Composer, Weaviate, mem0, freebayes, PolicyEngine, microlp, ollama.
+**Merged in** rust-bio (14), rostam (8), conda (3), dna-seq-varlociraptor (2), OpenFisca, varlociraptor. Welcomed as a first-time contributor in conda's July 2026 release notes.
+**Open in** ClickHouse, Vector, Composer, Weaviate, mem0, freebayes, PolicyEngine, microlp, ollama.
 
 ## How I work
 
