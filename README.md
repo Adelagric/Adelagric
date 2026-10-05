@@ -38,4 +38,4 @@ Reproduce first. Every issue I open ships with a standalone reproduction, every 
 
 Mostly bioinformatics these days: pair HMM correctness and speed in rust-bio and varlociraptor (a linear-space forward algorithm is in review in both), freebayes, and the dna-seq-varlociraptor workflow that ties them together.
 
-[kaleche.dev](https://kaleche.dev) · [ORCID 0009-0005-7566-1422](https://orcid.org/0009-0005-7566-1422) · [all merged PRs](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3AAdelagric+-user%3AAdelagric)
+[kaleche.dev](https://kaleche.dev) · [ORCID 0009-0005-7566-1422](https://orcid.org/0009-0005-7566-1422) · [all merged PRs](https://github.com/search?q=is%3Apr+is%3Amerged+author%3AAdelagric+-user%3AAdelagric&type=pullrequests)
