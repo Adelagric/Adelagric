@@ -16,7 +16,7 @@ Most of my time goes into other people's code. The bugs I keep finding fall into
 - **Corrupt state accepted as valid.** NaN vectors in Qdrant and Weaviate, checkpoints published without fsync in rostam.
 - **Tools that drift from their reference.** OpenFisca simulation clones sharing state, Rector dropping imports it still needs, Composer failing instead of explaining a security block.
 
-Merged in rust-bio, conda, rostam. Open in ClickHouse, Vector, Composer, Rector, OpenFisca, Qdrant, Weaviate, varlociraptor.
+Merged in rust-bio, conda, rostam, OpenFisca, varlociraptor. Open in ClickHouse, Vector, Composer, Rector, Qdrant, Weaviate.
 
 ## How I work
 
