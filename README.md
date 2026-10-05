@@ -14,7 +14,7 @@ I write Rust and hunt silent failures: the kind where a program returns a plausi
   - 22 releases, published on crates.io as four crates (`vivacity`, `-core`, `-resolver`, `-autoload`), installable via script, `cargo binstall` or a GitHub Action.
 - **[ocs-rs](https://github.com/Adelagric/ocs-rs)** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20746987.svg)](https://doi.org/10.5281/zenodo.20746987) [![PyPI](https://img.shields.io/pypi/v/ocs-rs.svg)](https://pypi.org/project/ocs-rs/) — exact, matrix-free solver for optimum contribution selection in breeding programs. Same optimum as optiSel, the field's exact tool, and **12–132× faster** given the relationship matrix; without it, it runs at population sizes where that matrix can't be built. Validated on wheat, pig and mouse genomic panels, with a manuscript ([PDF](https://github.com/Adelagric/ocs-rs/releases/download/v0.4.0/ocs-rs-manuscript-v0.4.0.pdf), [version française](https://github.com/Adelagric/ocs-rs/releases/download/v0.4.0/ocs-rs-manuscrit-fr-v0.4.0.pdf)) and a one-command reproduction.
 - **[vector-router](https://github.com/Adelagric/vector-router)** — gRPC middleware that rejects NaN, Inf and wrong-dimension vectors before they reach Qdrant or pgvector, with per-producer Prometheus metrics. Checked under miri.
-- **[moment-scale-law](https://github.com/Adelagric/moment-scale-law)** — paper and code: *How fine a change can moments see? A scale law for detecting distribution shift, with a kernel calibration rule.* [Read the PDF](https://github.com/Adelagric/moment-scale-law/blob/master/docs/paper1/paper.pdf). Every number in it maps to the script that produces it.
+- **[moment-scale-law](https://github.com/Adelagric/moment-scale-law)** — paper and code: *How fine a change can moments see? A scale law for detecting distribution shift, with a kernel calibration rule.* Preprint [arXiv:2608.01268](https://arxiv.org/abs/2608.01268) ([PDF](https://arxiv.org/pdf/2608.01268)), code archived at [doi:10.5281/zenodo.21649324](https://doi.org/10.5281/zenodo.21649324). Every number in it maps to the script that produces it.
 - **[opengatellm-rs](https://github.com/Adelagric/opengatellm-rs)** [![crates.io](https://img.shields.io/crates/v/opengatellm.svg)](https://crates.io/crates/opengatellm) — Rust client for OpenGateLLM, the French government's (DINUM / Etalab) open-source LLM gateway.
 
 ## Upstream
@@ -38,4 +38,4 @@ Reproduce first. Every issue I open ships with a standalone reproduction, every 
 
 Mostly bioinformatics these days: pair HMM correctness and speed in rust-bio and varlociraptor (a linear-space forward algorithm is in review in both), freebayes, and the dna-seq-varlociraptor workflow that ties them together.
 
-[kaleche.dev](https://kaleche.dev)
+[kaleche.dev](https://kaleche.dev) · [ORCID 0009-0005-7566-1422](https://orcid.org/0009-0005-7566-1422) · [all merged PRs](https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3AAdelagric+-user%3AAdelagric)
