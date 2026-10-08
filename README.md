@@ -3,7 +3,7 @@
 I write Rust and hunt silent failures: the kind where a program returns a plausible answer and nothing tells you it's wrong.
 
 <!-- stats:start -->
-**32 merged pull requests** upstream, in 6 projects. vivacity: 21 stars, 637 downloads on crates.io. One of my projects ships inside someone else's product.
+**32 merged pull requests** upstream, in 6 projects. vivacity: 21 stars, 664 downloads on crates.io. One of my projects ships inside someone else's product.
 <!-- stats:end -->
 
 ## Building
@@ -29,7 +29,7 @@ Most of my time goes into other people's code. The bugs I keep finding fall into
 <!-- upstream:start -->
 **Merged in** rust-bio (14), rostam (8), varlociraptor (4), conda (3), dna-seq-varlociraptor (2), OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
 
-**Open in** proj4rs, mem0, freebayes, microlp, Composer, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
+**Open in** mem0, freebayes, microlp, Composer, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
 <!-- upstream:end -->
 
 ## How I work
