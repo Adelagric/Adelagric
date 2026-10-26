@@ -28,7 +28,7 @@ Most of my time goes into other people's code. The bugs I keep finding fall into
 - **Tools that drift from their spec or reference.** varlociraptor scenarios with overlapping events (now checked at compile time, merged), dna-seq-varlociraptor declaring config keys it didn't read (merged), `freebayes-parallel` disagreeing with a single run at region boundaries, OpenFisca simulation clones sharing state with the original. A wrong `channelId` docstring in the x402 spec, reported with byte-exact vectors and fixed upstream.
 
 <!-- upstream:start -->
-**Merged in** rust-bio (14), rostam (8), varlociraptor (4), conda (3), dna-seq-varlociraptor (2), Composer, hgvs-rs, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
+**Merged in** rust-bio (14), rostam (8), varlociraptor (4), conda (3), dna-seq-varlociraptor (2; [doi:10.5281/zenodo.23475190](https://doi.org/10.5281/zenodo.23475190)), Composer, hgvs-rs, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
 
 **Open in** mem0, freebayes, microlp, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
 <!-- upstream:end -->
