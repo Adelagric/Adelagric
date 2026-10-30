@@ -27,6 +27,8 @@ NAMES = {
     "PolicyEngine/policyengine-core": "PolicyEngine",
     "Specy/microlp": "microlp",
     "ollama/ollama": "ollama",
+    "pyronear/pyro-api": "Pyronear",
+    "pyronear/pyro-visibility-analysis": "Pyronear",
 }
 # Draft proposals on friends' repositories, not upstream contributions.
 EXCLUDED = {"Nasism/axioma"}
