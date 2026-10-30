@@ -3,7 +3,7 @@
 I write Rust and hunt silent failures: the kind where a program returns a plausible answer and nothing tells you it's wrong.
 
 <!-- stats:start -->
-**36 merged pull requests** upstream, in 8 projects. vivacity: 21 stars, 1915 downloads on crates.io. One of my projects ships inside someone else's product.
+**38 merged pull requests** upstream, in 9 projects. vivacity: 21 stars, 1915 downloads on crates.io. One of my projects ships inside someone else's product.
 <!-- stats:end -->
 
 ## Building
@@ -22,21 +22,21 @@ I write Rust and hunt silent failures: the kind where a program returns a plausi
 
 Most of my time goes into other people's code. The bugs I keep finding fall into four buckets:
 
-- **Numbers that are quietly wrong.** Five bugs fixed in rust-bio's pair HMMs: gap extensions that emitted no base, stale cells left outside the band, gaps opened with the other sequence's probability, column ends summed twice, hop states that could not return to every match state. All merged and released in rust-bio 4.1.0 and 4.2.1.
-- **Data dropped without an error.** conda leaving half-created environments on disk (merged), OpenFisca losing memberless group entities on `restore_simulation` (merged), Vector's file source on stale checkpoints, mem0 on partial embedding failures, one bad span discarding a whole ingestion batch in future-agi.
+- **Numbers that are quietly wrong.** Five bugs fixed in rust-bio's pair HMMs: gap extensions that emitted no base, stale cells left outside the band, gaps opened with the other sequence's probability, column ends summed twice, hop states that could not return to every match state. All merged and released in rust-bio 4.1.0 and 4.2.1. In Pyronear's wildfire detection API, a plume-wide box went to the first overlapping sequence rather than the best match, so one fire's detections followed another's.
+- **Data dropped without an error.** conda leaving half-created environments on disk (merged), OpenFisca losing memberless group entities on `restore_simulation` (merged), Pyronear's camera-siting analysis losing candidate sites once a scenario was frozen (merged), Vector's file source on stale checkpoints, mem0 on partial embedding failures, one bad span discarding a whole ingestion batch in future-agi.
 - **Corrupt state accepted as valid.** In rostam: checkpoints published without a directory fsync, no fail-closed latch after a failed fsync, trailing bytes accepted by the log decoder; all fixed, plus fuzzing of the network and WAL-recovery decoders (8 PRs merged). NaN vectors accepted by Weaviate.
 - **Tools that drift from their spec or reference.** varlociraptor scenarios with overlapping events (now checked at compile time, merged), dna-seq-varlociraptor declaring config keys it didn't read (merged), `freebayes-parallel` disagreeing with a single run at region boundaries, OpenFisca simulation clones sharing state with the original. A wrong `channelId` docstring in the x402 spec, reported with byte-exact vectors and fixed upstream.
 
 <!-- upstream:start -->
-**Merged in** rust-bio (14), rostam (8), varlociraptor (4), conda (3), dna-seq-varlociraptor (3), hgvs-rs (2), Composer, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
+**Merged in** rust-bio (14), rostam (8), varlociraptor (4), conda (3), dna-seq-varlociraptor (3), hgvs-rs (2), Pyronear (2), Composer, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
 
-**Open in** pyro-api, pyro-visibility-analysis, snakemake, DeepTrack2, mem0, freebayes, microlp, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
+**Open in** snakemake, DeepTrack2, mem0, freebayes, microlp, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
 <!-- upstream:end -->
 
 ## How I work
 
 Reproduce first. Every issue I open ships with a standalone reproduction, every fix with a test that fails without it.
 
-Mostly bioinformatics these days: pair HMM correctness and speed in rust-bio and varlociraptor (a linear-space forward algorithm is in review in both), freebayes, and the dna-seq-varlociraptor workflow that ties them together.
+Mostly bioinformatics these days: pair HMM correctness and speed in rust-bio and varlociraptor (a linear-space forward algorithm is in review in both), freebayes, and the dna-seq-varlociraptor workflow that ties them together. On the side, wildfire detection with [Pyronear](https://github.com/pyronear): sequence matching in the alert API and camera-siting coverage analysis.
 
 [kaleche.dev](https://kaleche.dev) · [ORCID 0009-0005-7566-1422](https://orcid.org/0009-0005-7566-1422) · [all merged PRs](https://github.com/search?q=is%3Apr+is%3Amerged+author%3AAdelagric+-user%3AAdelagric&type=pullrequests)
