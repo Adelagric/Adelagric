@@ -3,7 +3,7 @@
 I write Rust and hunt silent failures: the kind where a program returns a plausible answer and nothing tells you it's wrong.
 
 <!-- stats:start -->
-**44 merged pull requests** upstream, in 10 projects. vivacity: 21 stars, 2171 downloads on crates.io. One of my projects ships inside someone else's product.
+**45 merged pull requests** upstream, in 10 projects. vivacity: 21 stars, 2174 downloads on crates.io. One of my projects ships inside someone else's product.
 <!-- stats:end -->
 
 ## Building
@@ -28,7 +28,7 @@ Most of my time goes into other people's code. The bugs I keep finding fall into
 - **Tools that drift from their spec or reference.** varlociraptor scenarios with overlapping events (now checked at compile time, merged), dna-seq-varlociraptor declaring config keys it didn't read (merged), `freebayes-parallel` disagreeing with a single run at region boundaries, OpenFisca simulation clones sharing state with the original. A wrong `channelId` docstring in the x402 spec, reported with byte-exact vectors and fixed upstream.
 
 <!-- upstream:start -->
-**Merged in** rust-bio (14), rostam (8), dna-seq-varlociraptor (5), varlociraptor (4), conda (3), Pyronear (3), snakemake (3), hgvs-rs (2), Composer, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
+**Merged in** rust-bio (14), rostam (8), dna-seq-varlociraptor (5), Pyronear (4), varlociraptor (4), conda (3), snakemake (3), hgvs-rs (2), Composer, OpenFisca. Welcomed as a first-time contributor in conda's July 2026 release notes.
 
 **Open in** DeepTrack2, mem0, freebayes, microlp, PolicyEngine, Vector, ClickHouse, future-agi, ollama, Weaviate.
 <!-- upstream:end -->
