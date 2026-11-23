@@ -3,7 +3,7 @@
 I write Rust and hunt silent failures: the kind where a program returns a plausible answer and nothing tells you it's wrong.
 
 <!-- stats:start -->
-**49 merged pull requests** upstream, in 10 projects. vivacity: 23 stars, 2639 downloads on crates.io. One of my projects ships inside someone else's product.
+**49 merged pull requests** upstream, in 10 projects. vivacity: 23 stars, 2682 downloads on crates.io. One of my projects ships inside someone else's product.
 <!-- stats:end -->
 
 ## Building
